@@ -21,5 +21,6 @@ install:
 - sudo pvcreate /dev/loop3
 - sudo pvcreate /dev/loop4
 - lsblk
+- sudo pvs
 script:
 - ./hello.py
