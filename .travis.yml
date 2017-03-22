@@ -2,7 +2,7 @@ language: python3
 install:
 - lsb_release -a
 - sudo apt-get update
-- sudo apt-get install dbus-python lvm2
+- sudo apt-get install python3-dbus lvm2
 - sudo mkdir -vp /pseudo
 - sudo dd if=/dev/zero of=/pseudo/d1.img bs=1 count=0 seek=8G
 - sudo dd if=/dev/zero of=/pseudo/d2.img bs=1 count=0 seek=8G
