@@ -1,0 +1,19 @@
+language: python3
+install:
+- lsb_release -a
+- sudo apt-get update
+- sudo apt-get install dbus-python lvm2
+- sudo mkdir -vp /pseudo
+- sudo dd if=/dev/zero of=/pseudo/d1.img bs=1 count=0 seek=8G
+- sudo dd if=/dev/zero of=/pseudo/d2.img bs=1 count=0 seek=8G
+- sudo dd if=/dev/zero of=/pseudo/d3.img bs=1 count=0 seek=8G
+- sudo dd if=/dev/zero of=/pseudo/d4.img bs=1 count=0 seek=8G
+- sudo dd if=/dev/zero of=/pseudo/d5.img bs=1 count=0 seek=8G
+- sudo systemctl start lvm2-lvmetad
+- sudo pvcreate /dev/loop0
+- sudo pvcreate /dev/loop1
+- sudo pvcreate /dev/loop2
+- sudo pvcreate /dev/loop3
+- sudo pvcreate /dev/loop4
+script:
+- ./hello.py
