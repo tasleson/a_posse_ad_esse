@@ -24,4 +24,4 @@ install:
 - sudo pvs
 - ls -lh /usr/lib/python3/dist-packages
 script:
-- ./hello.py
+- PYTHONPATH=/usr/lib/python3/dist-packages ./hello.py
