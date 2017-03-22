@@ -9,7 +9,12 @@ install:
 - sudo dd if=/dev/zero of=/pseudo/d3.img bs=1 count=0 seek=8G
 - sudo dd if=/dev/zero of=/pseudo/d4.img bs=1 count=0 seek=8G
 - sudo dd if=/dev/zero of=/pseudo/d5.img bs=1 count=0 seek=8G
-- sudo systemctl start lvm2-lvmetad
+# Oops add the loopback
+- sudo losetup -f /pseudo/d1.img
+- sudo losetup -f /pseudo/d2.img
+- sudo losetup -f /pseudo/d3.img
+- sudo losetup -f /pseudo/d4.img
+- sudo losetup -f /pseudo/d5.img
 - sudo pvcreate /dev/loop0
 - sudo pvcreate /dev/loop1
 - sudo pvcreate /dev/loop2
