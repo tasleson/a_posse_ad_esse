@@ -5,8 +5,8 @@ import os
 
 try:
     import dbus
-except:
-    print('missing dbus!')
+except ImportError:
+    print('ImportError: missing dbus!')
 
 print('Dumping sys.path entries')
 if __name__ == '__main__':

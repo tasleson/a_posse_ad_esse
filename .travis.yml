@@ -1,10 +1,13 @@
 language: python
 python:
   - "3.4"
+  - "3.4_with_system_site_packages"
 install:
+- python3 --version
 - lsb_release -a
 - sudo apt-get update
-- sudo apt-get install python3-dbus lvm2
+- sudo apt-get install lvm2
+- sudo apt-get install python3-dbus
 - sudo mkdir -vp /pseudo
 - sudo dd if=/dev/zero of=/pseudo/d1.img bs=1 count=0 seek=8G
 - sudo dd if=/dev/zero of=/pseudo/d2.img bs=1 count=0 seek=8G
